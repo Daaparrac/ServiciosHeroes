@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ServiciosHeroes"
+    }
+  },
+  "defaultProject": "ServiciosHeroes",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,46 @@
+<!--div class="mx-auto card">
+    <img src="assets/img/The_Boys_logo.png">
+    <app-header titulo="nuevo Heroe"></app-header>
+</div-->
+<app-navbar titulo="Consultar Heroe"></app-navbar>
+<a class="btn btn-success w-100" [routerLink]="['/heroe', 'nuevo']" routerLinkActive="router-link-active">New
+    Heroe</a>
+<div class="card mb-3 mx-auto" style="max-width: 540px;" *ngFor="let item of heroes">
+    <div class="row no-gutters">
+        <div class="col-md-4 mt-3">
+            <img [src]="item.imagen" class="card-img-top" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="w-100 card-title"> {{item.nombre}}</h2>
+                <br>
+                <p class="card-text text-justify">{{item.bio}}</p>
+                <p class="card-text text-justify"><small class="text-muted">{{item.aparicion}} - {{item.casa}}</small>
+                </p>
+
+                <button type="submit" class="btn btn-info w-100 mt-3" [routerLink]="['/heroe', item.id_heroe]"
+                    routerLinkActive="router-link-active">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--div class="card mx-auto" style="width: 18rem;">
+        <img [src]="heroe.imagen" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h2 class="text-center">{{heroe.nombre}}</h2>
+            <textarea class="w-100 text-justify" [(ngModel)]="heroe.bio" name="bio" required></textarea>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label>Aparición</label>
+                    <input class="w-100" [(ngModel)]="heroe.aparicion" name="aparicion" required>
+                </div>
+                <div class="text-center col-md-5">
+
+                    <label>Casa</label>
+                    <input class="w-100" [(ngModel)]="heroe.casa" name="casa" required> </div>
+            </div>
+        </div>
+        <button class="btn btn-dark w-100">Save</button>
+    </div-->

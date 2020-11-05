@@ -1,0 +1,57 @@
+<!--div class="mx-auto card">
+    <img src="assets/img/The_Boys_logo.png">
+    <app-header titulo="nuevo Heroe"></app-header>
+</div-->
+<app-navbar titulo="Nuevo Heroe" *ngIf="id=='nuevo'"></app-navbar>
+<app-navbar titulo="Editar Heroe" *ngIf="id!='nuevo'"></app-navbar>
+
+<form #heroe_form="ngForm" (ngSubmit)=guardar(heroe_form)>
+    <div class="card mb-3 mx-auto" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4 p-0">
+                <img [src]="heroe.imagen" class="card-img-top" alt="...">
+                <input class="mt-2" type="text" [(ngModel)]="heroe.imagen" name="imagen">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body pt-0">
+                    <label class="pr-3">Nombre:</label>
+                    <br>
+                    <input class="w-50 card-title" [(ngModel)]="heroe.nombre" name="nombre" required>
+                    <br>
+                    <label>Biografia</label>
+                    <textarea class="w-100 text-justify" [(ngModel)]="heroe.bio" name="bio" required></textarea>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Aparición</label>
+                            <input class="w-100" type="date" [(ngModel)]="heroe.aparicion" name="aparicion" required>
+                        </div>
+                        <div class="col-md-5">
+                            <label>Casa</label>
+                            <input class="w-100" [(ngModel)]="heroe.casa" name="casa" required> </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100 mt-3">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--div class="card mx-auto" style="width: 18rem;">
+        <img [src]="heroe.imagen" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h2 class="text-center">{{heroe.nombre}}</h2>
+            <textarea class="w-100 text-justify" [(ngModel)]="heroe.bio" name="bio" required></textarea>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label>Aparición</label>
+                    <input class="w-100" [(ngModel)]="heroe.aparicion" name="aparicion" required>
+                </div>
+                <div class="text-center col-md-5">
+
+                    <label>Casa</label>
+                    <input class="w-100" [(ngModel)]="heroe.casa" name="casa" required> </div>
+            </div>
+        </div>
+        <button class="btn btn-dark w-100">Save</button>
+    </div-->
+</form>
